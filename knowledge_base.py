@@ -1,3 +1,13 @@
+# Compatibilidade Python 3.10+: experta/frozendict 1.x usam
+# `collections.Mapping` (removido da stdlib). O shim abaixo permite
+# instalação padrão via `pip install -r requirements.txt`.
+import collections
+import collections.abc
+
+for _nome in ("Mapping", "MutableMapping", "Sequence", "MutableSequence", "Set", "MutableSet"):
+    if not hasattr(collections, _nome):
+        setattr(collections, _nome, getattr(collections.abc, _nome))
+
 from experta import Fact, KnowledgeEngine, Rule, MATCH
 
 

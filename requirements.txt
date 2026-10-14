@@ -1,4 +1,7 @@
+# Dependências do Consultor Inteligente de Carreiras em TI.
+# Instalação padrão (funciona em Python 3.10+ graças ao shim de
+# compatibilidade em knowledge_base.py):
+#   pip install -r requirements.txt
 experta==1.9.4
-frozendict==2.4.6
 schema==0.6.7
 streamlit>=1.32.0
